@@ -15,7 +15,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/**").permitAll()
+                        .requestMatchers("/**").permitAll() // 모든 요청 허용(개발 중 임시)
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form.disable())

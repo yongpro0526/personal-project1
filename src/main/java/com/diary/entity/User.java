@@ -13,11 +13,11 @@ import java.time.LocalDateTime;
 @Builder // 빌더패턴 자동 생성
 @Table(name = "users") // 테이블 이름을 users로 설정.(User는 예약어이기 때문에 테이블 이름으로 사용 불가능)
 public class User {
-    @Id
+    @Id // PK를 나타내는 어노테이션
     @GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO_INCREMENT, 1씩 늘어남.
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false) // @Column으로 해당 컬럼에 대한 속성 설정. 이 컬럼은 UK와 NOT NULL
     private String email;
 
     @Column(nullable = false)
